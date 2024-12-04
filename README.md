@@ -1,4 +1,4 @@
-# Google Drive to AWS S3
+# Google Drive - AWS S3
 This program can be used for transferring a Google Drive's file to AWS S3.
 
 This follows the following article.
