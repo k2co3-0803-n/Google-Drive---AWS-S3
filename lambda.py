@@ -55,10 +55,11 @@ def lambda_handler(event, context):
         bucket = os.environ.get('S3_BUCKET_NAME', 'default-bucket-name')
         print(bucket)
 
+	folder_id = 'GOOGLE_DRIVE_FOLDER_ID';
         key = event['Records'][0]['s3']['object']['key']
         print(event)
 
-        print(f"Received file from S3: Bucket={bucket}, Key={key}, FolderID={'1-b7HoeS8bkhqRuyZ8iLXMmM4Tl2Pv35x'}")
+        print(f"Received file from S3: Bucket={bucket}, Key={key}, FolderID={'folder_id'}")
         handle_file_processing(bucket, key, '1-b7HoeS8bkhqRuyZ8iLXMmM4Tl2Pv35x')
     # except Exception as e:
     #     print(f"Error in lambda handler: {e}")
