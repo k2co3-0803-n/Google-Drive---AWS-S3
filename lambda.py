@@ -47,16 +47,16 @@ def handle_file_processing(bucket, key, folder_id):
 
 def clean_up_local_file(file_path):
     """ローカルファイルを削除する"""
-    if os.path.exists(file_path):
-        os.remove(file_path)
+	if os.path.exists(file_path):
+		os.remove(file_path)
 
 def lambda_handler(event, context):
-    try:
-        bucket = os.environ.get('S3_BUCKET_NAME', 'default-bucket-name')
-        print(bucket)
-	
-	folder_id = 'GOOGLE_DRIVE_FOLDER_ID';
-        key = event['Records'][0]['s3']['object']['key']
+	try:
+		bucket = os.environ.get('S3_BUCKET_NAME', 'default-bucket-name')
+		print(bucket)
+
+		folder_id = 'GOOGLE_DRIVE_FOLDER_ID';
+		key = event['Records'][0]['s3']['object']['key']
         print(event)
 
         print(f"Received file from S3: Bucket={bucket}, Key={key}, FolderID={'folder_id'}")
